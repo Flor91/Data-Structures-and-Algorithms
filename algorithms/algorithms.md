@@ -48,15 +48,6 @@ Time complexity of an algorithm represents the amount of time required by the al
 
 For example, addition of two n-bit integers takes n steps. Consequently, the total computational time is T(n) = c ∗ n, where c is the time taken for the addition of two bits. Here, we observe that T(n) grows linearly as the input size increases.
 
-## Big-O Notation
-n: Size of the imputs
-
-![Big O](assets/big_o_table.png)
-![Big O](assets/big-o-notation.jpg)
-![Big O](assets/bigochart.gif)
-
----
-
 ## Greedy Algorithms
 
 An algorithm is designed to achieve optimum solution for a given problem. In greedy algorithm approach, decisions are made from the given solution domain. As being greedy, the closest solution that seems to provide an optimum solution is chosen.
@@ -84,20 +75,23 @@ Hence, we may conclude that the greedy approach picks an immediate optimized sol
 ### Examples
 Most networking algorithms use the greedy approach. Here is a list of few of them −
 
-Travelling Salesman Problem
-Prim's Minimal Spanning Tree Algorithm
-Kruskal's Minimal Spanning Tree Algorithm
-Dijkstra's Minimal Spanning Tree Algorithm
-Graph - Map Coloring
-Graph - Vertex Cover
-Knapsack Problem
-Job Scheduling Problem
+* [Travelling Salesman Problem](travelling_salesman.py)
+* Prim's Minimal Spanning Tree Algorithm
+* Kruskal's Minimal Spanning Tree Algorithm
+* [Dijkstra's Minimal Spanning Tree Algorithm](dijkstras.py)
+* Graph - Map Coloring
+* Graph - Vertex Cover
+* [Knapsack Problem](knapsack.py)
+* Job Scheduling Problem
 
 ## Divide and Conquer
 
 In divide and conquer approach, the problem in hand, is divided into smaller sub-problems and then each problem is solved independently. When we keep on dividing the subproblems into even smaller sub-problems, we may eventually reach a stage where no more division is possible. Those "atomic" smallest possible sub-problem (fractions) are solved. The solution of all sub-problems is finally merged in order to obtain the solution of an original problem.
 
 Broadly, we can understand divide-and-conquer approach in a three-step process.
+
+![Divide and conquer](assets/divide_and_conquer.jpg)
+
 
 ### Divide/Break
 This step involves breaking the problem into smaller sub-problems. Sub-problems should represent a part of the original problem. This step generally takes a recursive approach to divide the problem until no sub-problem is further divisible. At this stage, sub-problems become atomic in nature but still represent some part of the actual problem.
@@ -111,10 +105,10 @@ When the smaller sub-problems are solved, this stage recursively combines them u
 ### Examples
 The following computer algorithms are based on divide-and-conquer programming approach −
 
-Merge Sort
-Quick Sort
-Binary Search
-Strassen's Matrix Multiplication
+* Merge Sort
+* Quick Sort
+* [Binary Search](binary_search.py)
+* Strassen's Matrix Multiplication
 Closest pair (points)
 
 ## Dynamic programming
@@ -139,9 +133,20 @@ In contrast to divide and conquer algorithms, where solutions are combined to ac
 ### Example
 The following computer problems can be solved using dynamic programming approach −
 
-Fibonacci number series
-Knapsack problem
-Tower of Hanoi
-All pair shortest path by Floyd-Warshall
-Shortest path by Dijkstra
-Project scheduling
+* Fibonacci number series
+* Knapsack problem
+* Tower of Hanoi
+* All pair shortest path by Floyd-Warshall
+* [Shortest path by Dijkstra](shortest_path.py)
+* Project scheduling
+
+
+
+## Big-O Notation
+n: Size of the imputs
+
+![Big O](assets/big_o_table.png)
+![Big O](assets/big-o-notation.jpg)
+![Big O](assets/bigochart.gif)
+
+---

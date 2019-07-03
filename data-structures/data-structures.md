@@ -14,7 +14,7 @@ Data structures serve as the basis for abstract data types (ADT). The ADT define
 
 The data in the data structures are processed by certain operations. The particular data structure chosen largely depends on the frequency of the operation that needs to be performed on the data structure.
 
-* Traversing
+* Traversing: travel across or through
 * Searching
 * Insertion
 * Deletion
@@ -25,11 +25,13 @@ The data in the data structures are processed by certain operations. The particu
 
 ![Array](assets/array-2.png)
 
-Array is a container which can hold a fix number of items and these items should be of the same type. 
+Array is a container which can hold a fix number of items and these items should be of the same type, in a specific order. 
 
-An **array** is a number of elements in a specific order, typically all of the same type. *Elements* are accessed using an integer index to specify which element is required. Typical implementations allocate contiguous memory words for the elements of arrays. Arrays may be fixed-length or resizable.
+*Elements* are accessed using an integer index to specify which element is required. Typical implementations allocate contiguous memory words for the elements of arrays. Arrays may be fixed-length or resizable.
 
-Collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+Collection of items stored at contiguous memory locations. 
+
+Array is a data structure used to store homogeneous elements at contiguous locations. Size of an array must be provided before storing data.
 
 *Advantages of using arrays:*
 
@@ -48,19 +50,25 @@ Collection of items stored at contiguous memory locations. The idea is to store 
 
 **Update** − Updates an element at the given index.
 
-indexing: O(1)
-searching: O(n)
-insertion: O(n)
-push: O(n) Note: O(1) Amortized
-deletion: O(n)
+### Arrays O's
+Let size of array be n.
 
+| Operation         | Big-O     |                       |
+|---                | ---       | ---                   |
+| Accessing Time    | O(1)      | This is possible because elements are stored at contiguous locations |
+| Search Time       | O(n)      | for Sequential Search |
+| Search Time       | O(log n)  | for Binary Search If Array is sorted |
+| Insertion Time    | O(n)      | The worst case occurs when insertion happens at the Beginning of an array and  requires shifting all of the elements |
+| Deletion Time     | O(n)      | The worst case occurs when deletion happens at the Beginning of an array and requires shifting all of the elements |
+
+**Example** : For example, let us say, we want to store marks of all students in a class, we can use an array to store them. This helps in reducing the use of number of variables as we don’t need to create a separate variable for marks of every subject. All marks can be accessed by simply traversing the array.
 
 ### Arrays in Python
 
 *Python has a set of built-in methods that you can use on lists/arrays.*
 
 | Method    | Description  |
-|:-:        |  ---         |
+| ---       |  ---         |
 | append()  | Adds an element at the end of the list  |
 | clear()   | Removes all the elements from the list  |
 | copy()    | Returns a copy of the list  |
@@ -159,10 +167,19 @@ Eg. 1->2->3->1 [The next pointer of last node is pointing to the first]
 
 **Delete** − Deletes an element using the given key.
 
-indexing: O(n)
-searching: O(n)
-insertion: O(1)
-deletion: O(1)
+
+### Linked list O's
+
+| Operation         | Big-O     |                       |
+|---                | ---       | ---                   |
+| Accessing time of an element    | O(n)      |  |
+| Search time of an element       | O(n)      |  |
+| Insertion of an Element         | O(1)      | If we are at the position  where we have to insert an element |
+| eletion of an Element           | O(1)      | If we know address of node previous the node to be deleted |
+
+**Example** : Consider the previous example where we made an array of marks of student. Now if a new subject is added in the course, its marks also to be added in the array of marks. But the size of the array was fixed and it is already full so it can not add any new element. If we make an array of a size lot more than the number of subjects it is possible that most of the array will remain empty. We reduce the space wastage Linked List is formed which adds a node only when a new element is introduced. Insertions and deletions also become easier with linked list.
+One big drawback of linked list is, random access is not allowed. With arrays, we can access i’th element in O(1) time. In linked list, it takes Θ(i) time.
+
 
 ## [Stack](stacks.py)
 
@@ -186,13 +203,23 @@ To use a stack efficiently, we need to check the status of stack as well. For th
 
 **isEmpty**() − check if stack is empty.
 
-Applications of Stack:
+### Stacks O's
 
-Infix to Postfix Conversion using Stack
-Evaluation of Postfix Expression
-Reverse a String using Stack
-Implement two stacks in an array
-Check for balanced parentheses in an expression
+| Operation     | Big-O     |
+|---            | ---       |
+| Insertion     | O(1)      |
+| Deletion      | O(1)      |
+| Access time   | O(n)      |
+
+**Example** : Stacks are used for maintaining function calls (the last called function must finish execution first), we can always remove recursion with the help of stacks. Stacks are also used in cases where we have to reverse a word, check for balanced parenthesis and in editors where the word you typed the last is the first to be removed when you use undo operation. Similarly, to implement back functionality in web browsers.
+
+#### Applications of Stack:
+
+* Infix to Postfix Conversion using Stack
+* Evaluation of Postfix Expression
+* Reverse a String using Stack
+* Implement two stacks in an array
+* Check for balanced parentheses in an expression
 
 ## [Queue](queues.py)
 
@@ -203,6 +230,20 @@ A Queue is a linear structure which follows a particular order in which the oper
  Mainly the following are basic operations on queue: **Enqueue, Dequeue, Front, Rear**
 
 The difference between stacks and queues is in removing. In a stack we remove the item the most recently added; in a queue, we remove the item the least recently added. Both Queues and Stacks can be implemented using Arrays and Linked Lists.
+
+### Queues O's
+
+| Operation     | Big-O     |
+|---            | ---       |
+| Insertion     | O(1)      |
+| Deletion      | O(1)      |
+| Access time   | O(n)      |
+
+**Example** : Queue as the name says is the data structure built according to the queues of bus stop or train where the person who is standing in the front of the queue(standing for the longest time) is the first one to get the ticket. So any situation where resources are shared among multiple users and served on first come first server basis. Examples include CPU scheduling, Disk Scheduling. Another application of queue is when data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Examples include IO Buffers, pipes, file IO, etc.
+
+**Circular Queue** 
+
+The advantage of this data structure is that it reduces wastage of space in case of array implementation, As the insertion of the (n+1)’th element is done at the 0’th index if it is empty.
 
 ## [Hash Tables / Dictionaries](dictionary.py)
 
@@ -227,9 +268,20 @@ Keys are unique within a dictionary while values may not be. The values of a dic
 
 - Keys must be immutable. Which means you can use strings, numbers or tuples as dictionary keys but something like ['key'] is not allowed.
 
-value lookup: O(1)
-insertion: O(1)
-deletion: O(1)
+#### Hash Tables O's
+
+| Operation | Big-O Avg  | Worst case |
+|---        | ---        | ---        |
+| Space     | O(n)       |            |
+| Search    | O(1)       | O(n)       |
+| Insert    | O(1)       | O(n)       |
+| Delete    | O(1)       | O(n)       |
+
+* Hashing seems better than BST for all the operations. But in hashing, elements are unordered and in BST elements are stored in an ordered manner. Also BST is easy to implement but hash functions can sometimes be very complex to generate. In BST, we can also efficiently find floor and ceil of values.
+
+**Example** : Hashing can be used to remove duplicates from a set of elements. Can also be used find frequency of all items. For example, in web browsers, we can check visited urls using hashing. In firewalls, we can use hashing to detect spam. We need to hash IP addresses. Hashing can be used in any situation where want search() insert() and delete() in O(1) time.
+
+
 
 ## [Binary Tree](binary_tree.py)
 
@@ -249,6 +301,28 @@ It is a non-linear data structure. It has the following properties.
 * Every node other than the root is associated with one parent node.
 * Each node can have an arbiatry number of chid node.
 
+A Binary Tree can be traversed in two ways:
+* Depth First Traversal: 
+    * Inorder (Left-Root-Right), 
+    * Preorder (Root-Left-Right) 
+    * Postorder (Left-Right-Root)
+* Breadth First Traversal: Level Order Traversal
+
+#### Binary Tree properties
+The maximum number of nodes at level ‘l’ = 2l-1
+
+Maximum number of nodes = 2h – 1
+Here h is height of a tree. Height is considered as is maximum number of nodes on root to leaf path
+
+Minimum possible height =  ceil(Log2(n+1))   
+
+In Binary tree, number of leaf nodes is always one  more than nodes with two children.
+
+#### Time Complexity of Tree Traversal
+
+O(n)
+
+**Examples** : One reason to use binary tree or tree in general is for the things that form a hierarchy. They are useful in File structures where each file is located in a particular directory and there is a specific hierarchy associated with files and directories. Another example where Trees are useful is storing heirarchical objects like JavaScript Document Object Model considers HTML page as a tree with nesting of tags as parent child relations.
 
 ### [Binary search tree (BST)](binary_search_tree.py)
 
@@ -264,18 +338,41 @@ Thus, BST divides all its sub-trees into two segments; the left sub-tree and the
 
 left_subtree (keys)  ≤  node (key)  ≤  right_subtree (keys)
 
-searching: O(log n)
-insertion: O(log n)
-deletion: O(log n)
+#### BST O's
+
+h: Height of BST
+
+n: Number of nodes in BST
+
+| Operation    | Big-O     |
+|---           | ---       |
+| Search       | O(h)      |
+| Insertion    | O(h)      |
+| Deletion     | O(h)      |
+| Extra space  | O(n)      |
+
+If Binary Search Tree is Height Balanced, then h = O(Log n) 
+
+Self-Balancing BSTs such as AVL Tree, Red-Black Tree and Splay Tree make sure that height of BST remains O(Log n)
+
+* BST provide moderate access/search (quicker than Linked List and slower than arrays).
+* BST provide moderate insertion/deletion (quicker than Arrays and slower than Linked Lists).
+
+**Examples** : Its main use is in search application where data is constantly entering/leaving and data needs to printed in sorted order. For example in implementation in E- commerce websites where a new product is added or product goes out of stock and all products are lised in sorted order.
 
 ### [Heap](heaps.py)
 
 ![Heap](assets/MinHeapAndMaxHeap.png)
 
-A Heap is a special Tree-based data structure in which the tree is a complete binary tree. Generally, Heaps can be of two types:
+A Binary Heap is a Binary Tree with following properties:
 
-1. Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
-2. Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+1) It’s a complete tree (All levels are completely filled except possibly the last level and the last level has all keys as left as possible). This property of Binary Heap makes them suitable to be stored in an array.
+
+2) A Binary Heap is either Min Heap or Max Heap. In a Min Binary Heap, the key at root must be minimum among all keys present in Binary Heap. The same property must be recursively true for all nodes in Binary Tree. Max Binary Heap is similar to Min Heap. It is mainly implemented using array.
+
+    * Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+    
+    * Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
 
 A heap is created by using python’s inbuilt library named heapq. This library has the relevant functions to carry out various operations on heap data structure. Below is a list of these functions.
 
@@ -286,9 +383,21 @@ A heap is created by using python’s inbuilt library named heapq. This library 
 
 It is very useful is implementing priority queues where the queue item with higher weightage is given more priority in processing.
 
-min/max: O(1)
-insertion: O(log n)
-deletion: O(log n)
+#### Heap O's
+
+| Operation                          | Big-O         |
+|---                                 | ---           |
+| Get Minimum in Min Heap (/Max)     | O(1)          |
+| Extract Minimum Min Heap (/Max)    | O(log n)      |
+| Decrease Key in Min Heap (/Max)    | O(log n)      |
+| Insert                             | O(log n)      |
+| Delete                             | O(log n)      |
+
+**Example** : Used in implementing efficient priority-queues, which in turn are used for scheduling processes in operating systems. Priority Queues are also used in Dijstra’s and Prim’s graph algorithms.
+The Heap data structure can be used to efficiently find the k smallest (or largest) elements in an array, merging k sorted arrays, median of a stream, etc.
+
+Heap is a special data structure and it cannot be used for searching of a particular element.
+
 
 ## [Graphs](graphs.py)
 
