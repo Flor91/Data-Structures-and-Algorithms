@@ -260,11 +260,15 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
 * The right subtree of a node contains only nodes with keys greater than the node’s key.
 * The left and right subtree each must also be a binary search tree.
 
+Thus, BST divides all its sub-trees into two segments; the left sub-tree and the right sub-tree and can be defined as –
+
+left_subtree (keys)  ≤  node (key)  ≤  right_subtree (keys)
+
 searching: O(log n)
 insertion: O(log n)
 deletion: O(log n)
 
-### [Heap](heap.py)
+### [Heap](heaps.py)
 
 ![Heap](assets/MinHeapAndMaxHeap.png)
 
@@ -272,6 +276,15 @@ A Heap is a special Tree-based data structure in which the tree is a complete bi
 
 1. Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
 2. Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+
+A heap is created by using python’s inbuilt library named heapq. This library has the relevant functions to carry out various operations on heap data structure. Below is a list of these functions.
+
+* **heapify** - This function converts a regular list to a heap. In the resulting heap the smallest element gets pushed to the index position 0. But rest of the data elements are not necessarily sorted.
+* **heappush** – This function adds an element to the heap without altering the current heap.
+* **heappop** - This function returns the smallest data element from the heap.
+* **heapreplace** – This function replaces the smallest data element with a new value supplied in the function.
+
+It is very useful is implementing priority queues where the queue item with higher weightage is given more priority in processing.
 
 min/max: O(1)
 insertion: O(log n)
@@ -284,3 +297,15 @@ deletion: O(log n)
 A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,
 
 A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
+
+A graph is a pictorial representation of a set of objects where some pairs of objects are connected by links. The interconnected objects are represented by points termed as vertices, and the links that connect the vertices are called edges. 
+
+Following are the basic operations we perform on graphs.
+
+* Display graph vertices
+* Display graph edges
+* Add a vertex
+* Add an edge
+* Creating a graph
+
+A graph can be easily presented using the python dictionary data types. We represent the vertices as the keys of the dictionary and the connection between the vertices also called edges as the values in the dictionary.
