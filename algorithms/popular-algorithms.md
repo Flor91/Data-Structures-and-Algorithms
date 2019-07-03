@@ -11,7 +11,7 @@ A simple approach is to do linear search.The time complexity of above algorithm 
 
 The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
 
-![Binary-Search](assets/binary-search.jpg)
+![Binary-Search](./assets/binary-search.jpg)
 
 We basically ignore half of the elements just after one comparison.
 
@@ -56,7 +56,7 @@ The above recurrence can be solved either using Recurrence Tree method or Master
 
 ### Interpolation Search
 
-![Interpolation Search](assets/interpolation-search.png)
+![Interpolation Search](./assets/interpolation-search.png)
 
 Improved variant of binary search. This search algorithm works on the probing position of the required value. For this algorithm to work properly, the data collection should be in a sorted form and equally distributed.
 
@@ -126,47 +126,47 @@ End Procedure
 ```
 
 ## [Sorting](sorting_algorithms.py)
-![Sorting](assets/sorting-algorithm-comparison.jpg)
+![Sorting](./assets/sorting-algorithm-comparison.jpg)
 
 ### Bubble Sort
 
 It is a comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order.
 
-![Bubble sort](assets/bubble-short.png)
+![Bubble sort](./assets/bubble-short.png)
 
 ### Merge Sort
 
 Merge sort first divides the array into equal halves and then combines them in a sorted manner.
 
-![Merge sort](assets/merge-sort-algorithm-codesjavapng.png)
+![Merge sort](./assets/merge-sort-algorithm-codesjavapng.png)
 
 ### Insertion Sort
 
 Insertion sort involves finding the right place for a given element in a sorted list. So in beginning we compare the first two elements and sort them by comparing them. Then we pick the third element and find its proper position among the previous two sorted elements. This way we gradually go on adding more elements to the already sorted list by putting them in their proper position.
 
-![Insertion sort](assets/insertion-sort.png)
+![Insertion sort](./assets/insertion-sort.png)
 
 ### Shell Sort
 
 Shell Sort involves sorting elements which are away from ech other. We sort a large sublist of a given list and go on reducing the size of the list until all elements are sorted. The below program finds the gap by equating it to half of the length of the list size and then starts sorting all elements in it. Then we keep resetting the gap until the entire list is sorted.
 
-![Shell sort](assets/shell-sort.jpg)
+![Shell sort](./assets/shell-sort.jpg)
 
 ### Select Sort
 
 In selection sort we start by finding the minimum value in a given list and move it to a sorted list. Then we repeat the process for each of the remaining elements in the unsorted list. The next element entering the sorted list is compared with the existing elements and placed at its correct position. So at the end all the elements from the unsorted list are sorted.
 
-![Select sort](assets/selection-short.png)
+![Select sort](./assets/selection-short.png)
 
 ## [Graphs](graphs_traversals.py)
 
-![Graphs](assets/graph-traversals.jpeg)
+![Graphs](./assets/graph-traversals.jpeg)
 
 ### Depth First Traversal
 
 Also called depth first search (DFS),this algorithm traverses a graph in a depth ward motion and uses a stack to remember to get the next vertex to start a search, when a dead end occurs in any iteration. We implement DFS for a graph in python using the set data types as they provide the required functionalities to keep track of visited and unvisited nodes.
 
-![Depth First Traversal](assets/dfs.jpeg)
+![Depth First Traversal](./assets/dfs.jpeg)
 
 ### Breadth First Traversal
 
@@ -174,54 +174,54 @@ Also called breadth first search (BFS),this algorithm traverses a graph breadth 
 
 We implement BFS for a graph in python using queue data structure discussed earlier. When we keep visiting the adjacent unvisited nodes and keep adding it to the queue. Then we start dequeue only the node which is left with no unvisited nodes. We stop the program when there is no next adjacent node to be visited.
 
-![Breadth First Traversal](assets/bfs.jpeg)
+![Breadth First Traversal](./assets/bfs.jpeg)
 
 ## Recursion
-![iterative-vs-recursion](assets/iterative-vs-recursion.png)
+![iterative-vs-recursion](./assets/iterative-vs-recursion.png)
 
 ## Greedy
-![activity-selection-problem1-l.jpg](assets/algorithms.jpeg)
+![activity-selection-problem1-l.jpg](./assets/algorithms.jpeg)
 
 ### Activity Selection Problem
 
-![activity-selection-problem1-l.jpg](assets/activity-selection-problem1-l.jpg)
+![activity-selection-problem1-l.jpg](./assets/activity-selection-problem1-l.jpg)
 
-![activity-selection.png](assets/activity-selection.png)
+![activity-selection.png](./assets/activity-selection.png)
 
 ### Kruskal Minimum Spanning Tree
 
-![kruskal-min-spanning-tree.png](assets/kruskal-min-spanning-tree.png)
+![kruskal-min-spanning-tree.png](./assets/kruskal-min-spanning-tree.png)
 
 
 ### Huffman Coding
 
-![huffman7.png](assets/huffman7.png)
+![huffman7.png](./assets/huffman7.png)
 
 
 ### Job Sequencing
 
-![job-sequencing.png](assets/JobSequencing.jpg)
+![job-sequencing.png](./assets/JobSequencing.jpg)
 
 
 ### Dijksta Minimum Path
 
-![dijkstra-min-path.jpg](assets/dijkstra-min-path.jpg)
+![dijkstra-min-path.jpg](./assets/dijkstra-min-path.jpg)
 
 
 ### Prim Minimum Spanning Tree
 
-![prim-mst.jpg](assets/prim-mst.jpg)
+![prim-mst.jpg](./assets/prim-mst.jpg)
 
 
 ## Dynamic Programming
-![activity-selection-problem1-l.jpg](assets/dynamic-programming.jpeg)
+![activity-selection-problem1-l.jpg](./assets/dynamic-programming.jpeg)
 
 ### Knapsack problem
 
-![activity-selection-problem1-l.jpg](assets/knapsack-problem-using-Dynamic-Programming-min.png)
+![activity-selection-problem1-l.jpg](./assets/knapsack-problem-using-Dynamic-Programming-min.png)
 
-![activity-selection-problem1-l.jpg](assets/knapsack-problem-using-Dynamic-Programming-min-min.png)
+![activity-selection-problem1-l.jpg](./assets/knapsack-problem-using-Dynamic-Programming-min-min.png)
 
 ## Backtracking
 
-![activity-selection-problem1-l.jpg](assets/backtracking.png)
+![activity-selection-problem1-l.jpg](./assets/backtracking.png)
